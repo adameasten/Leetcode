@@ -1,0 +1,35 @@
+TwoSum
+
+Given an array of integers and an integer target, return 
+indices of the two numbers such that they add up to target.
+
+Example:
+Input: numbers = [3, 2, 4], target = 6
+Output: [1,2]
+
+Solution and takeaways:
+Easy:
+ Bruteforce.
+ Iterate through the array in separate loops.
+ Inner loop is based on outer loop index + 1 and outer loop
+ is limited to search through numbers - 1. Inside of inner loop,
+ add numbers[outerIndex] with numbers[innerIndex] and check if 
+ sum == target. If so, return outerIndex and innerIndex, otherwise
+ continue bruteforce until sum == target.
+
+Hard:
+ Usage of a dictionary.
+ Iterate through the input numbers.
+ Use the target number and subtract each input number
+ as we iterate over the array. Check if the result of the
+ subtraction exists in the dictionary, if not, add the input
+ number to the dictionary with corresponding index as value and 
+ input as key. Iterate until you get a difference from the
+ subtraction that matches a key in the dictionary.
+ (When working with c#, duplicates is not allowed in
+  the dictionary structure. To overcome input data that
+  has duplicates, we only use 1 entry in the dictionary,
+  and instead of adding when the difference from the subtraction
+  is nonexisting, we overwrite the single value stored in the 
+  dictionary until we get a match 
+  (dict[key] = index instead of dict.Add(key, index))
