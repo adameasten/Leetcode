@@ -26,10 +26,8 @@ Hard:
  number to the dictionary with corresponding index as value and 
  input as key. Iterate until you get a difference from the
  subtraction that matches a key in the dictionary.
- (When working with c#, duplicates is not allowed in
-  the dictionary structure. To overcome input data that
-  has duplicates, we only use 1 entry in the dictionary,
-  and instead of adding when the difference from the subtraction
-  is nonexisting, we overwrite the single value stored in the 
-  dictionary until we get a match 
-  (dict[key] = index instead of dict.Add(key, index))
+ (When working with c#, no mapstructure is defined in
+ the base library. To overcome the constraint which prevents
+ duplicates from being added to dictionaries, we use the index
+ to overwrite index keys with corresponding same values. This 
+ results in a solution wich provides the latest index for duplicates)
