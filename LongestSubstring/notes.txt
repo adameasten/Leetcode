@@ -1,0 +1,32 @@
+Longest Substring without repeating characters
+
+Given a string, find the length if the longest 
+substring without repeating characters.
+
+Example:
+Input: "abcabcbb"
+Output: 3
+
+Solution and takeaways:
+Easy:
+ Bruteforce.
+ Use 2 loops to iterate over the input string.
+ 1 outer loop to keep track of each character
+ in the string, and a inner loop to iterate through
+ the string to find all substrings without repeating
+ characters. Keep track of which of the length of 
+ the substrings you find and return the longest.
+
+Hard:
+ Sliding window.
+ Use a sliding window algorithm to determine the
+ longest substring. When iterating over the characters
+ keep track of the substring with a hashset, and 2 separate
+ indices to track the sliding window. Iterate over the 
+ inputdata with first index and add characters to the set 
+ until a repeated character appears. Use the second index 
+ to shrink the sliding window and remove all characters from
+ the input data so that the window doesn't contain any duplicates.
+ Keep track of the set size to determine when the longest substring
+ is found.
+ 
