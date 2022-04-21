@@ -1,0 +1,28 @@
+Longest Palindromic substring
+
+Given a string, return the longest
+palindromic substring.
+
+Example:
+Input: "babad"
+Output: "bab"
+
+Solution and takeaways:
+Easy:
+ Bruteforce.
+ Use 2 loops to iterate over the input
+ string and find all substrings. Check 
+ if any strings are palindromic by a 
+ equality check against itself reversed.
+ Keep track of the longest palindromic
+ substring when comparing.
+
+Hard:
+ Loop over each character in the input data.
+ Use each char as a middlepoint and expand 
+ with a left and right index to check for equal
+ characters. This way we can find the longest
+ palindromic substring in 0(n2) time.
+ To take care of even numbered palindromic
+ substrings, we use a offset on the right 
+ index when we expand.
