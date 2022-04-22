@@ -1,0 +1,32 @@
+Container with most water
+
+You are given an array of integers 
+representing heights of bars. If drawn
+in a graph whre X-axis is index and 
+Y-axis is the value of the integers,
+find the biggest container (area) which
+wont spill any water if filled.
+
+Example:
+Input: [1, 8, 6, 2, 5, 4, 8, 3, 7]
+Output: 49
+
+Solution and takeaways:
+Easy:
+ As always, bruteforce.
+ Iterate over each integer input and 
+ compare with all the other integers.
+ Multiply the lowest integer with the 
+ index difference to get a area of a 
+ container which wont spill any water.
+ Keep track of largest area.
+
+Hard:
+ Two pointers.
+ Initialize two pointers two iterate over
+ the array from both ends. While the left
+ pointer is larger than the right pointer,
+ calculate the area between the smallest
+ integer the index of the bigger. Walk from
+ each end of the integer array until 
+ right pointer is at a index <= left pointer index.
