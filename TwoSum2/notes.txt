@@ -1,0 +1,26 @@
+TwoSum 2
+
+Given a asc sorted 1-dimensional array and a target
+integer, return indicies of two numbers which
+sum == target.
+
+Example:
+Input: numbers = [2, 7, 11, 15], target = 9
+Output: [1,2]
+
+Solution and takeaways:
+Easy:
+ Bruteforce.
+ Iterate over each character and add with
+ rest of the array until target is reached.
+
+Hard:
+ Two pointer algorithm.
+ Use 2 pointers when iterating over the array.
+ 1 at the beginnig and 1 at the end. At each iteration
+ compare the sum of the pointers until target is
+ reached. Beacuse the array is sorted, its important
+ to inc/dec the right pointer if sum != target.
+ If sum of pointers is > target, we decrement right
+ pointer beacuse of the ascending order of numbers,
+ otherwise the increment the left pointer.§§_wq
