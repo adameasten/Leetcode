@@ -1,0 +1,33 @@
+RmNthNodeFromList
+
+Given the head of a linked list
+remove the nth element from the end of the
+list and return it's head.
+
+Example:
+Input: head = [1,2,3,4,5], n = 2
+Ouput: head = [1,2,3,5]
+
+Solution and takeaways:
+No clear easy/hard path.
+ Two pointer and dummy node.
+ To solve this, we make use of a 
+ dummy node and 2 pointers. We add the
+ dummy node at the start of the linked
+ list and initilize our left pointer at it.
+ The right pointer is initilized at the head.
+ We then traverse the list and increment
+ the right pointer as many steps as the 
+ input n. This will give us a n + 1 gap
+ between the two pointers. Increment each
+ pointer until the right one reaches end
+ of the list. Beacuse of out init state
+ where we sat the distance between
+ left and right pointer to n + 1,
+ we know that the left pointer is 
+ pointing at the node which is to the
+ left of our node to remove. We update our
+ node pointer to point at next.next to 
+ get rid of the nth element from the end
+ of the linked list.
+
