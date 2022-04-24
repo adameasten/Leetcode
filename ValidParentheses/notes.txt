@@ -1,0 +1,25 @@
+ValidParentheses
+
+Given a string containing just the 
+characters '(', ')', '{', '}', '[' and ']', 
+determine if the input string is valid.
+The string is valid if all brackets are 
+closed in the right order.
+
+Example:
+Input: "()[]{}"
+Output: true
+
+Solution and takeaways
+Medium:
+ Solve the problem by using a stack.
+ Iterate over each char in the input array.
+ When encountering any openening bracket,
+ push the corresponding closing bracket onto
+ the stack. When encountering a closing bracket,
+ pop the stack and compare the top value with 
+ your closing bracket. Since we have pushed 
+ closed brackets for each open bracket from the
+ start, we should have atleast 1 closing bracket
+ matching each pop. If not, the solution is 
+ incomplete and we can return.
