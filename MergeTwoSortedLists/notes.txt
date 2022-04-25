@@ -1,0 +1,24 @@
+Merge two sorted linkedlists
+
+Given the head of two sorted 
+linked lists, merge the two lists 
+together to one sorted list.
+
+Example:
+Input: list1 = [1,2,4], list2 = [1,3,4]
+Output: [1,1,2,3,4,4]
+
+Solution and takeaways:
+Medium:
+ Start with a dummy node and a tail var
+ to keep track of the tail when traversing
+ the linked list. Traverse the list and 
+ compare the two input lists values,
+ one at a time. Assign the lowest value to the
+ tail and move it forward on pair with the 
+ traversal of the linked lists. This way
+ we get an update by reference to the dummy nodes
+ subsequent links in the list. When we reach the end
+ of both lists, all values should be added in order
+ beneath the dummy head. Return dummy.next to get
+ the full list.
