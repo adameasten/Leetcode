@@ -1,0 +1,37 @@
+Search in Rotated Sorted Array
+
+Given an integer array with distinct
+values sorted in ascending order and which
+is rotated around its own axis, return
+the index of the target value provided.
+It has to be done in O(logn) time comp.
+
+Example:
+Input: nums = [4,5,6,7,0,1,2], target = 0
+Output: 4
+
+Solution and takeaways:
+Hard:
+ No bruteforce beacuse of the time
+ complexity rule.
+ To solve this we make use of a modified
+ binary search. We have som extra parameters
+ to count for when we are dealing with the 
+ rotation of the array.
+ Implement the binary search, but instead of
+ always look at middle to decied which direction
+ to search, we compare the target value with the 
+ left and right pointers too. Start by comparing
+ mid value with leftpointer to decied which portion
+ of the two sorted we are in. 
+ If we are in left sorted portion, 
+ we as usually check if target > mid or 
+ if thats not true if target < leftpointer. 
+ Both these cases means that our target 
+ is to the right of mid. Else it's to the Left.
+ If we are in the right sorted portion of
+ the array, we start with the usual check 
+ if target < mid, if that's not the case we 
+ also check if target > rightpointer. Both
+ these cases means that our target is to the
+ left of the mid. Else we search to the right.
