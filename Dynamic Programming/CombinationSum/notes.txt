@@ -1,0 +1,26 @@
+Combination Sum
+
+Given an array of distinct integers and a target,
+return a list of all possible unique combinations
+where the chosen numbers sum up to target.
+
+Example:
+Input: nums = [2,3,6,7], target = 7
+Output: [[2,2,3], [7]]
+
+Solution and takeaways:
+Hard:
+ Implement a backtracking algorithm
+ which uses recursion and a depth
+ first search approach to find all 
+ unique combinations. We do it this way
+ to avoid any duplicates when building
+ the tree structure and searching for any
+ matching combination which == target.
+ Start from the left number and find all
+ possible solutions from that number until
+ youve exceeded the target value. Then go back
+ one step at a time in the tree and traverse 
+ down to the left to check rest of the input
+ num array togheter with the parent combination
+ of your deepest leaf node on the left side.
