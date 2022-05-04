@@ -1,0 +1,31 @@
+Climbing stairs
+
+You are climbing a staircase. The input is the
+amount of steps the stairs have. You can only 
+take one or two steps at a time. How many 
+distinct ways can you reach the top?
+
+Example:
+Input: 3
+Output: 3 (1+1+1, 1+2, 2+1)
+
+Solution:
+Medium
+ A little bit tricky. To solve this 
+ problem we use dynamic programming.
+ To start we recurse starting from 0,
+ creating a tree structure and compute
+ all possible ways with DFS. But doing it
+ this way, when we visualize the tree,
+ we can see that we are calculating
+ the same problem in several subtrees.
+ To take care of that problem we could 
+ use Memoization to get subtree values
+ from the cache instead of calculating
+ them multiple times.
+ Another valid solution which we choose,
+ is to start from the top of the stair
+ and go down. This way we can calculate
+ on each step how many it took to get there
+ and add it togheter with previous step.
+ 
