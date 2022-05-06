@@ -1,0 +1,25 @@
+Product of array except self
+
+Given an integer array, return the
+product of all integers except integer[i].
+The timecomplexity must be 0(n), and no
+division allowed.
+
+Example:
+Input: nums = [1,2,3,4]
+Output: [24,12,8,6]
+
+Soltion and takeaways:
+Medium:
+ No bruteforce beacuse of the time complexity limit.
+ To solve the problem we use a array to store result
+ values. We iterate through the input array 2 times.
+ The first time we calculate the product of all numbers
+ before numbers[i]. We then take the product and store
+ it in result[i]. We call this the postproduct.
+ Then we iterate over the array again backwards.
+ This time we calculate the product of all numbers
+ post numbers[i], but rather then storing it at 
+ correspondning result[i], when multiply it with 
+ result[i] then store it. Doing it this way gets
+ us the right product from all numbers excpet numbers[i].
