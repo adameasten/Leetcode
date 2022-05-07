@@ -1,0 +1,29 @@
+Coin Change
+
+Given an array of integers representing
+coins and a target amount, find the fewest
+number of coins neede to make up that amount.
+If the amount cant be made, return -1.
+
+Example:
+Input: coins = [1,2,5], amount = 11
+Output: 3 (5 + 5 + 1)
+
+Solution and takeaways
+Hard:
+ Bottom-up dynamic programming.
+ To solve this we use a bottom-up approach.
+ Start with a dp array containing a slot
+ for each possible amount leading up to
+ your finalamount. This way we can subtract
+ a coin for each amount on the way to our final
+ goal, and check our solved solution for the 
+ amount that equals the difference. The subtraction
+ is based on one of the coin values and 
+ current amount. We can then check how many
+ coins was needed to get the difference value
+ and add a 1 for the coin we used to subtract,
+ and get the total amount of coins needed to 
+ reach the current amount.
+ When we have solved to whole dp array,
+ we return the value at dp[amount].
