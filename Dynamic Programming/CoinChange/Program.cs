@@ -6,22 +6,25 @@ static int CoinChange(int[] coins, int finalAmount)
 {
     var dp = new int[finalAmount + 1];
 
-    for (var currentAmount = 1; currentAmount <= finalAmount; currentAmount++)
+    //Skip amount 0, no coin added can lead to that
+    for (var amount = 1; amount <= finalAmount; amount++)
     {
-        dp[currentAmount] = int.MaxValue;
+        dp[amount] = int.MaxValue;
+
         foreach (var coin in coins)
         {
-            var diff = currentAmount - coin;
+            var diff = amount - coin;
 
             if (diff >= 0 && dp[diff] != int.MaxValue)
             {
-                dp[currentAmount] = Math.Min(dp[currentAmount], 1 + dp[diff]);
+                dp[amount] = Math.Min(dp[amount], 1 + dp[diff]);
             }
         }
     }
 
-    if (dp[finalAmount] != int.MaxValue)
-        return dp[finalAmount];
-    else
-        return -1;
+    var result = dp[finalAmount] != int.MaxValue ?
+        dp[finalAmount] :
+        -1;
+
+    return result;
 }
