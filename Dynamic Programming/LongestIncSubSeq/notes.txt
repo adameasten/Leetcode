@@ -1,0 +1,29 @@
+Longest Increasing Subsequence
+
+Given an integer array, return the length 
+of the longest strictly increasing subsequence.
+
+A subsequence is a sequence that can be 
+derived from an array by deleting some 
+or no elements without changing the order 
+of the remaining elements. 
+For example, [3,6,2,7] is a subsequence 
+of the array [0,3,1,6,2,2,7].
+
+Example:
+Input: nums = [10,9,2,5,3,7,101,18]
+Output: 4 ([2,3,7,101])
+
+Solution and takeaways:
+Medium:
+ Dp-bottom up solution.
+ Start by solving the longest increasing
+ subseq from the last index of the input array.
+ Store the result in a dp array, at the 
+ corresponding index. Iterate over the array
+ backwards and compare input[currentIndex] with
+ all previous values in the array. If any values
+ post currentIndex are greater then currentIndex,
+ compare dp[currentIndex] with dp[postCurrentIndex] + 1,
+ and choose the larger value to get the longest 
+ increasing subsequence from currentindex.
